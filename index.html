@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Google typography CSS -->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'> 
+
+    <style>
+
+    .row {padding: 30px 0;}
+    .container {max-width: 1200px;}
+    .container-fluid {max-width: 1200px;}
+    .rightmargin {margin-right: 2px;}
+    .form-group {margin-right: 35%;}
+    .carousel-caption {background-color: rgba(0,0,0,0.7);}
+    fieldset {
+    width: 100%;
+    padding: 20px;
+    }
+
+    .formalign {
+    display: inline-block;
+    width: 100px;
+    padding: 20px;
+    vertical-align: top;
+    }
+
+    .emptydiv {
+    height: 20px;
+    }
+
+    body {
+      font-family: 'Oswald', sans-serif !important;
+    }
+
+    #main {
+      font-family: 'Oswald', sans-serif !important;
+      color: #B9D80A;
+      font-size: 48px;
+    }
+
+    #align {
+      text-align: center;
+      color: #B9D80A;
+      font-size: 36px;
+    }
+
+    #rowData {
+      text-align: center;
+    }
+
+    .centerText {
+      text-align: center;
+      font-size: 42px;
+    }
+
+    #green {
+      color: #B9D80A;
+    }
+
+    @media screen and (max-width: 500px) { 
+    #main {
+    width: 80%}
+    }
+
+    }
+    .slidecontainer {
+      width: 30%;
+    }
+
+    .slider {
+        -webkit-appearance: none;
+        width: 65%;
+        height: 12px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
+
+    .slider:hover {
+        opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 12px;
+        height: 12px;
+        background: #4CAF50;
+        cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+        width: 12px;
+        height: 12px;
+        background: #4CAF50;
+        cursor: pointer;
+    }
+
+    </style>
+
+    <title>Project 168 - Time Calculator</title>
+  </head>
+  <body>
+
+    <form id="myform" action=" " >
+      <fieldset>
+        <div class="container-fluid">
+
+          <div class="row">
+            <div class="col-12 col-md-8">
+              <h1 id="main">PROJECT 168</h1>
+            </div>
+            <div class="col-6 col-md-4"> 
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-7">
+              <p>How are you using your time? Are you a student needing to study rather than surf on social media or the internet? Checkout this nifty time calculator to calculate how you’re using time and what your results look like compared to the 168 hours there are in a given week. What you'll see to the right is a total calculation of all times subtracted from the week's 168 hours.</p>
+            </div>
+            <div class="col-md-5">
+              <h2 id="green" class="centerText">Time left to study</h2>
+              <h3 class="centerText">Total: <span id="total"></span> hours</h3>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-xl-12">
+              <h2 id="align">| SOCIAL MEDIA |</h2>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-sm-4" id="rowData">
+              <img src="instagram.png" class="rounded-circle" width="75" height="75">
+              <h3><span id="IGSliderLabel"></span> mins</h3>
+              <p>Instagram per day (0-140mins)</p>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="120" value="0" class="slider" id="IGSlider" width="100">
+              </div>
+            </div>
+            <div class="col-sm-4" id="rowData">
+              <img src="twitter.png" class="rounded-circle" width="75" height="75">
+              <h3><span id="twitterSliderLabel"></span> mins</h3>
+              <p>Twitter per day (0-140mins)</p>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="120" value="0" class="slider" id="twitterSlider" width="100">
+              </div>
+            </div>
+            <div class="col-sm-4" id="rowData">
+              <img src="facebook.png" class="rounded-circle" width="75" height="75">
+              <h3><span id="facebookSliderLabel"></span> mins</h3>
+              <p>Facebook per day (0-140mins)</p>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="120" value="0" class="slider" id="facebookSlider" width="100">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-sm-4" id="rowData">
+              <img src="messages.png" class="rounded-circle" width="75" height="75">
+              <h3><span id="textingSliderLabel"></span> mins</h3>
+              <p>Texting per day (0-140mins)</p>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="120" value="0" class="slider" id="textingSlider" width="100">
+              </div>
+            </div>
+            <div class="col-sm-4" id="rowData">
+              <img src="messenger.png" class="rounded-circle" width="75" height="75">
+              <h3><span id="messengerSliderLabel"></span> mins</h3>
+              <p>Messenger per day (0-140mins)</p>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="120" value="0" class="slider" id="messengerSlider" width="100">
+              </div>
+            </div>
+            <div class="col-sm-4" id="rowData">
+              <img src="snapchat.png" class="rounded-circle" width="75" height="75">
+              <h3><span id="snapchatSliderLabel"></span> mins</h3>
+              <p>Snapchat per day (0-140mins)</p>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="120" value="0" class="slider" id="snapchatSlider" width="100">
+              </div>
+            </div>
+          </div>
+
+
+          <hr>
+
+
+          <div class="row">
+            <div class="col-xl-12">
+              <h2 id="align">| ENTERTAINMENT |</h2>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-sm-4" id="rowData">
+              <img src="netflix.png" class="rounded-circle" width="100" height="100">
+              <h3><span id="netflixSliderLabel"></span> mins</h3>
+              <p>Netflix per day (0-140mins)</p>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="120" value="0" class="slider" id="netflixSlider" width="100">
+              </div>
+            </div>
+            <div class="col-sm-4" id="rowData">
+              <img src="tv.png" class="rounded-circle" width="100" height="100">
+              <h3><span id="tvSliderLabel"></span> mins</h3>
+              <p>TV per day (0-140mins)</p>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="120" value="0" class="slider" id="tvSlider" width="100">
+              </div>
+            </div>
+            <div class="col-sm-4" id="rowData">
+              <img src="youtube.png" class="rounded-circle" width="100" height="100">
+              <h3><span id="youtubeSliderLabel"></span> mins</h3>
+              <p>YouTube per day (0-140mins)</p>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="120" value="0" class="slider" id="youtubeSlider" width="100">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-sm-4" id="rowData">
+              <img src="hulu.jpeg" class="rounded-circle" width="100" height="100">
+              <h3><span id="huluSliderLabel"></span> mins</h3>
+              <p>Hulu per day (0-140mins)</p>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="120" value="0" class="slider" id="huluSlider" width="100">
+              </div>
+            </div>
+            <div class="col-sm-4" id="rowData">
+              <img src="spotify.png" class="rounded-circle" width="100" height="100">
+              <h3><span id="spotifySliderLabel"></span> mins</h3>
+              <p>Spotify per day (0-140mins)</p>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="120" value="0" class="slider" id="spotifySlider" width="100">
+              </div>
+            </div>
+            <div class="col-sm-4" id="rowData">
+              <img src="Apple-music-icon.png" class="rounded-circle" width="100" height="100">
+              <h3><span id="applemusicSliderLabel"></span> mins</h3>
+              <p>Apple Music per day (0-140mins)</p>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="120" value="0" class="slider" id="applemusicSlider" width="100">
+              </div>
+            </div>
+          </div>
+
+
+          <hr>
+
+
+          <div class="row">
+            <div class="col-xl-12">
+              <h2 id="align">| LIFE |</h2>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-sm-4" id="rowData">
+              <img src="school.png" class="rounded-circle" width="100" height="100">
+              <h3><span id="schoolhoursSliderLabel"></span> hours</h3>
+              <p>School per week (0-18hrs)</p>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="18" value="0" class="slider" id="schoolhoursSlider" width="100">
+              </div>
+            </div>
+            <div class="col-sm-4" id="rowData">
+              <img src="work.png" class="rounded-circle" width="100" height="100">
+              <h3><span id="workhoursSliderLabel"></span> hours</h3>
+              <p>Work per week (0-40hrs)</p>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="40" value="0" class="slider" id="workhoursSlider" width="100">
+              </div>
+            </div>
+            <div class="col-sm-4" id="rowData">
+              <img src="sleep.png" class="rounded-circle" width="100" height="100">
+              <h3><span id="sleepSliderLabel"></span> hours</h3>
+              <p>Sleep per day (0-12hrs)</p>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="12" value="0" class="slider" id="sleepSlider" width="100">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </fieldset>
+    </form>
+
+
+    <script>
+
+      IGSlider = 0;
+      twitterSlider = 0;
+      facebookSlider = 0;
+      textingSlider = 0;
+      messengerSlider = 0;
+      snapchatSliderLabel = 0;
+      netflixSlider = 0;
+      tvSlider = 0;
+      youtubeSlider = 0;
+      huluSlider = 0;
+      spotifySlider = 0;
+      applemusicSlider = 0;
+      schoolhoursSlider = 0;
+      workhoursSlider = 0;
+      sleepSlider = 0;
+
+
+      // Instagram function
+      document.getElementById("IGSlider").oninput = function() {
+        IGSlider = parseInt(document.getElementById("IGSlider").value);
+        document.getElementById("IGSliderLabel").innerHTML = IGSlider; 
+        document.getElementById("total").innerHTML = (parseInt(168) - parseFloat(((IGSlider * parseInt(7)) + (twitterSlider * parseInt(7)) + (facebookSlider * parseInt(7)) + (textingSlider * parseInt(7)) + (messengerSlider * parseInt(7)) + (snapchatSliderLabel * parseInt(7)) + (netflixSlider * parseInt(7)) + (tvSlider * parseInt(7)) + (youtubeSlider * parseInt(7)) + (huluSlider * parseInt(7)) + (spotifySlider * parseInt(7)) + (applemusicSlider * parseInt(7))) / parseInt(60) + schoolhoursSlider + workhoursSlider + sleepSlider * parseInt(7))).toFixed(2);
+      }
+
+      // Twitter function
+      document.getElementById("twitterSlider").oninput = function() {
+        twitterSlider = parseInt(document.getElementById("twitterSlider").value);
+        document.getElementById("twitterSliderLabel").innerHTML = twitterSlider;
+        document.getElementById("total").innerHTML = (parseInt(168) - parseFloat(((IGSlider * parseInt(7)) + (twitterSlider * parseInt(7)) + (facebookSlider * parseInt(7)) + (textingSlider * parseInt(7)) + (messengerSlider * parseInt(7)) + (snapchatSliderLabel * parseInt(7)) + (netflixSlider * parseInt(7)) + (tvSlider * parseInt(7)) + (youtubeSlider * parseInt(7)) + (huluSlider * parseInt(7)) + (spotifySlider * parseInt(7)) + (applemusicSlider * parseInt(7))) / parseInt(60) + schoolhoursSlider + workhoursSlider + sleepSlider * parseInt(7))).toFixed(2);
+      }  
+
+      // Facebook function
+      document.getElementById("facebookSlider").oninput = function() {
+        facebookSlider = parseInt(document.getElementById("facebookSlider").value);
+        document.getElementById("facebookSliderLabel").innerHTML = facebookSlider;
+        document.getElementById("total").innerHTML = (parseInt(168) - parseFloat(((IGSlider * parseInt(7)) + (twitterSlider * parseInt(7)) + (facebookSlider * parseInt(7)) + (textingSlider * parseInt(7)) + (messengerSlider * parseInt(7)) + (snapchatSliderLabel * parseInt(7)) + (netflixSlider * parseInt(7)) + (tvSlider * parseInt(7)) + (youtubeSlider * parseInt(7)) + (huluSlider * parseInt(7)) + (spotifySlider * parseInt(7)) + (applemusicSlider * parseInt(7))) / parseInt(60) + schoolhoursSlider + workhoursSlider + sleepSlider * parseInt(7))).toFixed(2);
+      }
+
+      // Texting function
+      document.getElementById("textingSlider").oninput = function() {
+        textingSlider = parseInt(document.getElementById("textingSlider").value);
+        document.getElementById("textingSliderLabel").innerHTML = textingSlider;
+        document.getElementById("total").innerHTML = (parseInt(168) - parseFloat(((IGSlider * parseInt(7)) + (twitterSlider * parseInt(7)) + (facebookSlider * parseInt(7)) + (textingSlider * parseInt(7)) + (messengerSlider * parseInt(7)) + (snapchatSliderLabel * parseInt(7)) + (netflixSlider * parseInt(7)) + (tvSlider * parseInt(7)) + (youtubeSlider * parseInt(7)) + (huluSlider * parseInt(7)) + (spotifySlider * parseInt(7)) + (applemusicSlider * parseInt(7))) / parseInt(60) + schoolhoursSlider + workhoursSlider + sleepSlider * parseInt(7))).toFixed(2);
+      }
+
+      // Messenger function
+      document.getElementById("messengerSlider").oninput = function() {
+        messengerSlider = parseInt(document.getElementById("messengerSlider").value);
+        document.getElementById("messengerSliderLabel").innerHTML = messengerSlider;
+        document.getElementById("total").innerHTML = (parseInt(168) - parseFloat(((IGSlider * parseInt(7)) + (twitterSlider * parseInt(7)) + (facebookSlider * parseInt(7)) + (textingSlider * parseInt(7)) + (messengerSlider * parseInt(7)) + (snapchatSliderLabel * parseInt(7)) + (netflixSlider * parseInt(7)) + (tvSlider * parseInt(7)) + (youtubeSlider * parseInt(7)) + (huluSlider * parseInt(7)) + (spotifySlider * parseInt(7)) + (applemusicSlider * parseInt(7))) / parseInt(60) + schoolhoursSlider + workhoursSlider + sleepSlider * parseInt(7))).toFixed(2);
+      }
+
+      // Snapchat function
+      document.getElementById("snapchatSlider").oninput = function() {
+        snapchatSliderLabel = parseInt(document.getElementById("snapchatSlider").value);
+        document.getElementById("snapchatSliderLabel").innerHTML = snapchatSliderLabel;
+        document.getElementById("total").innerHTML = (parseInt(168) - parseFloat(((IGSlider * parseInt(7)) + (twitterSlider * parseInt(7)) + (facebookSlider * parseInt(7)) + (textingSlider * parseInt(7)) + (messengerSlider * parseInt(7)) + (snapchatSliderLabel * parseInt(7)) + (netflixSlider * parseInt(7)) + (tvSlider * parseInt(7)) + (youtubeSlider * parseInt(7)) + (huluSlider * parseInt(7)) + (spotifySlider * parseInt(7)) + (applemusicSlider * parseInt(7))) / parseInt(60) + schoolhoursSlider + workhoursSlider + sleepSlider * parseInt(7))).toFixed(2);
+      }
+
+      // Netflix function
+      document.getElementById("netflixSlider").oninput = function() {
+        netflixSlider = parseInt(document.getElementById("netflixSlider").value);
+        document.getElementById("netflixSliderLabel").innerHTML = netflixSlider;
+        document.getElementById("total").innerHTML = (parseInt(168) - parseFloat(((IGSlider * parseInt(7)) + (twitterSlider * parseInt(7)) + (facebookSlider * parseInt(7)) + (textingSlider * parseInt(7)) + (messengerSlider * parseInt(7)) + (snapchatSliderLabel * parseInt(7)) + (netflixSlider * parseInt(7)) + (tvSlider * parseInt(7)) + (youtubeSlider * parseInt(7)) + (huluSlider * parseInt(7)) + (spotifySlider * parseInt(7)) + (applemusicSlider * parseInt(7))) / parseInt(60) + schoolhoursSlider + workhoursSlider + sleepSlider * parseInt(7))).toFixed(2);
+      }
+
+      // TV function
+      document.getElementById("tvSlider").oninput = function() {
+        tvSlider = parseInt(document.getElementById("tvSlider").value);
+        document.getElementById("tvSliderLabel").innerHTML = tvSlider;
+        document.getElementById("total").innerHTML = (parseInt(168) - parseFloat(((IGSlider * parseInt(7)) + (twitterSlider * parseInt(7)) + (facebookSlider * parseInt(7)) + (textingSlider * parseInt(7)) + (messengerSlider * parseInt(7)) + (snapchatSliderLabel * parseInt(7)) + (netflixSlider * parseInt(7)) + (tvSlider * parseInt(7)) + (youtubeSlider * parseInt(7)) + (huluSlider * parseInt(7)) + (spotifySlider * parseInt(7)) + (applemusicSlider * parseInt(7))) / parseInt(60) + schoolhoursSlider + workhoursSlider + sleepSlider * parseInt(7))).toFixed(2);
+      }
+
+      // YouTube function
+      document.getElementById("youtubeSlider").oninput = function() {
+        youtubeSlider = parseInt(document.getElementById("youtubeSlider").value);
+        document.getElementById("youtubeSliderLabel").innerHTML = youtubeSlider;
+        document.getElementById("total").innerHTML = (parseInt(168) - parseFloat(((IGSlider * parseInt(7)) + (twitterSlider * parseInt(7)) + (facebookSlider * parseInt(7)) + (textingSlider * parseInt(7)) + (messengerSlider * parseInt(7)) + (snapchatSliderLabel * parseInt(7)) + (netflixSlider * parseInt(7)) + (tvSlider * parseInt(7)) + (youtubeSlider * parseInt(7)) + (huluSlider * parseInt(7)) + (spotifySlider * parseInt(7)) + (applemusicSlider * parseInt(7))) / parseInt(60) + schoolhoursSlider + workhoursSlider + sleepSlider * parseInt(7))).toFixed(2);
+      }
+
+      // Hulu function
+      document.getElementById("huluSlider").oninput = function() {
+        huluSlider = parseInt(document.getElementById("huluSlider").value);
+        document.getElementById("huluSliderLabel").innerHTML = huluSlider;
+        document.getElementById("total").innerHTML = (parseInt(168) - parseFloat(((IGSlider * parseInt(7)) + (twitterSlider * parseInt(7)) + (facebookSlider * parseInt(7)) + (textingSlider * parseInt(7)) + (messengerSlider * parseInt(7)) + (snapchatSliderLabel * parseInt(7)) + (netflixSlider * parseInt(7)) + (tvSlider * parseInt(7)) + (youtubeSlider * parseInt(7)) + (huluSlider * parseInt(7)) + (spotifySlider * parseInt(7)) + (applemusicSlider * parseInt(7))) / parseInt(60) + schoolhoursSlider + workhoursSlider + sleepSlider * parseInt(7))).toFixed(2);
+      }
+
+      // Spotify function
+      document.getElementById("spotifySlider").oninput = function() {
+        spotifySlider = parseInt(document.getElementById("spotifySlider").value);
+        document.getElementById("spotifySliderLabel").innerHTML = spotifySlider;
+        document.getElementById("total").innerHTML = (parseInt(168) - parseFloat(((IGSlider * parseInt(7)) + (twitterSlider * parseInt(7)) + (facebookSlider * parseInt(7)) + (textingSlider * parseInt(7)) + (messengerSlider * parseInt(7)) + (snapchatSliderLabel * parseInt(7)) + (netflixSlider * parseInt(7)) + (tvSlider * parseInt(7)) + (youtubeSlider * parseInt(7)) + (huluSlider * parseInt(7)) + (spotifySlider * parseInt(7)) + (applemusicSlider * parseInt(7))) / parseInt(60) + schoolhoursSlider + workhoursSlider + sleepSlider * parseInt(7))).toFixed(2);
+      }
+
+      // Apple Music function
+      document.getElementById("applemusicSlider").oninput = function() {
+        applemusicSlider = parseInt(document.getElementById("applemusicSlider").value);
+        document.getElementById("applemusicSliderLabel").innerHTML = applemusicSlider;
+        document.getElementById("total").innerHTML = (parseInt(168) - parseFloat(((IGSlider * parseInt(7)) + (twitterSlider * parseInt(7)) + (facebookSlider * parseInt(7)) + (textingSlider * parseInt(7)) + (messengerSlider * parseInt(7)) + (snapchatSliderLabel * parseInt(7)) + (netflixSlider * parseInt(7)) + (tvSlider * parseInt(7)) + (youtubeSlider * parseInt(7)) + (huluSlider * parseInt(7)) + (spotifySlider * parseInt(7)) + (applemusicSlider * parseInt(7))) / parseInt(60) + schoolhoursSlider + workhoursSlider + sleepSlider * parseInt(7))).toFixed(2);
+      }
+
+      // School Hours function
+      document.getElementById("schoolhoursSlider").oninput = function() {
+        schoolhoursSlider = parseInt(document.getElementById("schoolhoursSlider").value);
+        document.getElementById("schoolhoursSliderLabel").innerHTML = schoolhoursSlider;
+        document.getElementById("total").innerHTML = (parseInt(168) - parseFloat(((IGSlider * parseInt(7)) + (twitterSlider * parseInt(7)) + (facebookSlider * parseInt(7)) + (textingSlider * parseInt(7)) + (messengerSlider * parseInt(7)) + (snapchatSliderLabel * parseInt(7)) + (netflixSlider * parseInt(7)) + (tvSlider * parseInt(7)) + (youtubeSlider * parseInt(7)) + (huluSlider * parseInt(7)) + (spotifySlider * parseInt(7)) + (applemusicSlider * parseInt(7))) / parseInt(60) + schoolhoursSlider + workhoursSlider + sleepSlider * parseInt(7))).toFixed(2);
+      }
+
+      // Work Hours function
+      document.getElementById("workhoursSlider").oninput = function() {
+        workhoursSlider = parseInt(document.getElementById("workhoursSlider").value);
+        document.getElementById("workhoursSliderLabel").innerHTML = workhoursSlider;
+        document.getElementById("total").innerHTML = (parseInt(168) - parseFloat(((IGSlider * parseInt(7)) + (twitterSlider * parseInt(7)) + (facebookSlider * parseInt(7)) + (textingSlider * parseInt(7)) + (messengerSlider * parseInt(7)) + (snapchatSliderLabel * parseInt(7)) + (netflixSlider * parseInt(7)) + (tvSlider * parseInt(7)) + (youtubeSlider * parseInt(7)) + (huluSlider * parseInt(7)) + (spotifySlider * parseInt(7)) + (applemusicSlider * parseInt(7))) / parseInt(60) + schoolhoursSlider + workhoursSlider + sleepSlider * parseInt(7))).toFixed(2);
+      }
+
+      // Sleep Hours function
+      document.getElementById("sleepSlider").oninput = function() {
+        sleepSlider = parseInt(document.getElementById("sleepSlider").value);
+        document.getElementById("sleepSliderLabel").innerHTML = sleepSlider;
+        document.getElementById("total").innerHTML = (parseInt(168) - parseFloat(((IGSlider * parseInt(7)) + (twitterSlider * parseInt(7)) + (facebookSlider * parseInt(7)) + (textingSlider * parseInt(7)) + (messengerSlider * parseInt(7)) + (snapchatSliderLabel * parseInt(7)) + (netflixSlider * parseInt(7)) + (tvSlider * parseInt(7)) + (youtubeSlider * parseInt(7)) + (huluSlider * parseInt(7)) + (spotifySlider * parseInt(7)) + (applemusicSlider * parseInt(7))) / parseInt(60) + schoolhoursSlider + workhoursSlider + sleepSlider * parseInt(7))).toFixed(2);
+      }
+
+    </script>
+
+
+
+    <br>
+    <br>
+    <!-- Footer -->
+    <footer class="page-footer font-small blue">
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">Aaron Johnson Copyright ©  2018:
+        <a href="https://aaronj.co" target="_blank">Aaronj.co</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
